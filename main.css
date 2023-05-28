@@ -5,7 +5,23 @@
 body{
     background-color: #202020; 
     font-family: retrofont; 
+    color: #4deeea; 
+    
 }
 h1 {
     font-size: 128 px;
+}
+
+a:link {
+    position: relative; 
+    text-decoration: none; 
+    color: #4deeea; 
+}
+
+a:hover{
+    color: #3ce936; 
+}
+
+a:active{
+    top: 2px; 
 }

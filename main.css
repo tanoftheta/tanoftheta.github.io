@@ -12,7 +12,7 @@ h1 {
     font-size: 128 px;
 }
 
-a:link {
+a:link, a:visited {
     position: relative; 
     text-decoration: none; 
     color: #4deeea; 

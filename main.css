@@ -1,4 +1,11 @@
-
+@font-face {
+    font-family: retrofont; 
+    src: url(slkscr.ttf); 
+}
 body{
     background-color: #202020; 
+    font-family: retrofont; 
+}
+h1 {
+    font-size: 128 px;
 }

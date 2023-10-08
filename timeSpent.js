@@ -71,6 +71,4 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     }
-    console.log(user_time)
-    
 }); 

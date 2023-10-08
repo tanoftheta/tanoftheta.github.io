@@ -4,13 +4,15 @@ document.addEventListener('DOMContentLoaded', function() {
     const observerOptions = {
         root: null,
         rootMargin: '0px',
-        threshold: 0
+        threshold: .50
     };
 
     const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
+                setTimeout( () => {
                 entry.target.classList.add('appear');
+                }, 200); 
             } else {
                 entry.target.classList.remove('appear');
             }

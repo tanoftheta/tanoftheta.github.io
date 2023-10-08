@@ -9,13 +9,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
         entries.forEach(entry => {
+            setTimeout( () => {
             if (entry.isIntersecting) {
-                setTimeout( () => {
                 entry.target.classList.add('appear');
-                }, 200); 
             } else {
                 entry.target.classList.remove('appear');
             }
+        }, 500); 
         });
     }, observerOptions);
 

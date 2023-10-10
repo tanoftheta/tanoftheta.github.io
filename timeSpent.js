@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', function() {
     ];
     let currentSection = null;
     updateChart(user_time); 
-    let scrollins = document.querySelectorAll('.scroll-in');
     
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
@@ -15,19 +14,9 @@ document.addEventListener('DOMContentLoaded', function() {
             if (entry.isIntersecting && currentSection !== sectionName) {
                 if (currentSection) {
                     stopTimer();
-                    if (currentSection === "home"){
-                        scrollins.forEach(scrollin => {
-                            scrollin.classList.remove('appear');
-                        })
-                    }
                 }
                 currentSection = sectionName;
                 startTimer(currentSection);
-                if (currentSection === "home"){
-                    scrollins.forEach(scrollin => {
-                        scrollin.classList.add('appear');
-                    })
-                }
             } 
         });
     }, { threshold: 0.51 });

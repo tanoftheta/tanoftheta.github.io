@@ -1,15 +1,15 @@
-html {
-    height: 100vh; 
-}
-
 body{
     background-color: #ffffff; 
     font-family: 'Times New Roman', 'Times', 'serif'; 
     color: #326ed5;
     overflow-x: hidden;
-    overflow-y: scroll; 
 }
 
+#scroller{
+    height: 100vh; 
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+}
 .header {
     position: fixed;
     top: 0;
@@ -43,7 +43,8 @@ body{
     justify-content: flex-end;
     align-items: center;
     width: 100%;
-    height: 200px; /* Adjust the height of the navbar */
+    height: 200px; 
+    z-index: 1000;
 }
 
 .slider{
@@ -88,18 +89,10 @@ body{
     color: #000000; /* Text color */
 }
 
-.scroller{
-    height: 100vh; 
-    scroll-snap-type: y mandatory;
-    overflow-y: scroll; 
-}
-
-
 section{
     height: 100vh; 
     scroll-snap-align: start;
 }
-
 
 #intro{
     font-size: 100px; 
@@ -120,17 +113,41 @@ section{
 }
 
 .moveInFromLeft {
-    transform: translateX(-50%);
-    transition: 500ms ease-in;
+    animation: moveInFromLeft 0.5s ease forwards;
 }
 
 .moveInFromRight {
-    transform: translateX(50%); 
-    transition: 500ms ease-in; 
+    animation: moveInFromRight 0.5s ease forwards;
 }
 
-.appear {
-    transform: translateX(0);
+@keyframes moveInFromLeft {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes moveInFromRight {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+#about {
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+}
+
+#about p {
+    margin: 0 auto; /* Center the paragraphs horizontally */
+    max-width: 600px; /* Set a maximum width for the paragraphs for better readability */
 }
 a:link, a:visited {
     position: relative; 

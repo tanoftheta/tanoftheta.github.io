@@ -1,0 +1,12 @@
+.body {
+    overflow-y: scroll;
+}
+
+.sectionContainer {
+    scroll-snap-type: y mandatory;
+    height: 400vh; 
+}
+
+.section {
+    scroll-snap-align: start;
+}

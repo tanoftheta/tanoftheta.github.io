@@ -1,79 +1,13 @@
-<html>
-    <head>
-        <title>Tan's Website</title>
-        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
-        <!--Bootstrap Library-->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link rel="stylesheet" href="./main.css">
-        <!--jQuery Library-->
-        <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-        <!--Chart.js Library-->
-        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-        <script src="navbar.js"></script>
-        <script src="viz.js"></script>
-        <script src="timeSpent.js"></script>
-    </head>
-    <body>
-        <header>
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="navbar">
-                            <h1 id="Title">TAN'S WEBSITE</h1>
-                            <div class="color-scale">
-                                    <div class="color-bar" style="background-color: #18d1e2;">
-                                        <span>home</span>
-                                    </div>
-                                    <div class="color-bar" style="background-color: #62d09d;">
-                                        <span>about</span>
-                                    </div>
-                                    <div class="color-bar" style="background-color: #8bc34a;">
-                                        <span>projects</span>
-                                    </div>
-                                    <div class="color-bar" style="background-color: #ffa15d;">
-                                        <span>contact</span>
-                                    </div>
-                            </div>
-                            <div class="slider">
-                                <input type="range" min="0" max="20" value="0" class="slider" id="navSlider">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
-        <div id="scroller">
-            <section id="home">
-                <div class="grid-container">
-                    <div class="container for-section">
-                        <div class="row">
-                            <div class="col-6">
-                                <h1 id="intro" class="moveInFromLeft">Hi, I'm Tan Mahmud, a programmer.</h1>
-                            </div>
-                            <div class="col-6">
-                                <canvas id="theViz" class="moveInFromRight"></canvas>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section id="about">
-                <p> I am an undergraduate student at Hunter College in my final year of a degree in Computer Science with a minor in Mathematics. I am particularly interested in machine learning 
-                and data science. 
-                </p>
-                <p>
-                    I was born and raised in New York City. Outside of my passion for numbers and programming, 
-                I am an avid reader, doting cat owner, and ramen lover. 
-                </p>
-            </section>
-
-            <section id="projects">
-                <h1>Coming Soon!</h1>
-            </section>
-
-            <section id="contact">
-                <h1>Hit my line</h1>
-            </section>
-        </div>
-    </body>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tan's Website</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>

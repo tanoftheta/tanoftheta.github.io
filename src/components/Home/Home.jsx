@@ -11,7 +11,7 @@ export const Home = ({scrollToSection, timeSpent}) => {
                             <div className="col-6">
                                 <h1 id={styles.intro} className={styles.moveInFromLeft}>Hi, I'm Tan Mahmud, a programmer.</h1>
                             </div>
-                            <div class="col-6"> 
+                            <div className="col-6"> 
                                 <Viz scrollToSection={scrollToSection} timeSpent={timeSpent} />
                             </div>
                         </div>

@@ -72,7 +72,7 @@ function Viz({ timeSpent, scrollToSection }) {
                         },
                         onClick: function (event, legendItem) {
                             const clickedSectionIndex = legendItem.index;
-                            const keys = Object.keys(timeSpent.timeSpent);
+                            const keys = Object.keys(timeSpent);
                             const sectionId = keys[clickedSectionIndex];
                             scrollToSection(sectionId); 
                         }
@@ -80,7 +80,15 @@ function Viz({ timeSpent, scrollToSection }) {
                 },
                 layout: {
                     padding: 10
-                }
+                },
+                onClick: function(event, elements) {
+                    if (elements.length > 0) {
+                        const clickedSection = elements[0].index;
+                        const keys = Object.keys(timeSpent);
+                        const sectionId = keys[clickedSection];
+                        scrollToSection(sectionId); 
+                        }
+                    },
             }
         });
 

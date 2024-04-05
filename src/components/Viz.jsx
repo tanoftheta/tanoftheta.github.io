@@ -15,10 +15,10 @@ function Viz({ timeSpent, scrollToSection }) {
         window.theViz = new Chart(ctx, {
             type: 'doughnut',
             data: {
-                labels: Object.keys(timeSpent.timeSpent),
+                labels: Object.keys(timeSpent),
                 datasets: [{
                     label: 'Time Spent (in seconds)',
-                    data: Object.values(timeSpent.timeSpent),
+                    data: Object.values(timeSpent),
                     backgroundColor: backgroundColors,
                     hoverBackgroundColor: hoverBackgroundColors,
                     borderWidth: 2,
@@ -74,7 +74,7 @@ function Viz({ timeSpent, scrollToSection }) {
                             const clickedSectionIndex = legendItem.index;
                             const keys = Object.keys(timeSpent.timeSpent);
                             const sectionId = keys[clickedSectionIndex];
-                            timeSpent.scrollToSection(sectionId); 
+                            scrollToSection(sectionId); 
                         }
                     }
                 },
@@ -87,7 +87,7 @@ function Viz({ timeSpent, scrollToSection }) {
         return () => {
             window.theViz.destroy();
         }
-    }, [timeSpent.timeSpent]);
+    }, [timeSpent]);
 
     return (
         <div className='container'>

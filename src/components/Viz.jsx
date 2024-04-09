@@ -81,6 +81,11 @@ function Viz({ timeSpent, scrollToSection }) {
                 layout: {
                     padding: 10
                 },
+                onHover: function (event, elements) {
+                    if (elements) {
+                        event.native.target.style.cursor = 'pointer';
+                    }
+                },
                 onClick: function(event, elements) {
                     if (elements.length > 0) {
                         const clickedSection = elements[0].index;
@@ -98,8 +103,8 @@ function Viz({ timeSpent, scrollToSection }) {
     }, [timeSpent]);
 
     return (
-        <div className='container'>
-            <canvas style={{ height: '100%', width: '100%' }} id="theViz"></canvas>
+        <div className='container' style={{height: '100%', width: '100%'}}>
+            <canvas id="theViz"></canvas>
         </div>
     );
 }

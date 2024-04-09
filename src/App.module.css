@@ -4,7 +4,8 @@
 
 .sectionContainer {
     scroll-snap-type: y mandatory;
-    height: 400vh; 
+    height: 400vh;
+    margin-top: 5%; 
 }
 
 .section {

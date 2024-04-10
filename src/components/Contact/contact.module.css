@@ -1,3 +1,53 @@
+@import '../../vars.css'; 
+
 .section {
     height: 100vh; 
+}
+
+.contactFormContainer{
+    margin-top: 20vh;
+    background-color: var(--orange);
+    height: 60vh;
+    width: 60vh; 
+    border-radius: 10%; 
+}
+
+.Title{
+    display: flex; 
+    justify-content: center;
+    margin-top: 2vh;
+    font-family: var(--main-text);
+    margin-bottom: 5vh; 
+}
+
+.btnCustom{
+    background-color: var(--mintgreen);
+    color: white;
+    margin-top: 2vh;
+    font-family: var(--main-text);
+}
+
+.btnCustom:hover{
+    background-color: var(--mintgreen-hover);
+    scale: 1.1;
+}
+
+.formGroup{
+    width: 75%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2vh;
+    align-items: center;
+}
+
+.messageArea{
+    height: 15vh;
+}
+
+.label{
+    font-family: var(--tiny-text);
+}
+
+.formField{
+    width: 90%;
 }

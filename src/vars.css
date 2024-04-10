@@ -1,4 +1,16 @@
 :root {
     /* Colors */ 
     --color-text: #000;
+    --blue: #18d1e2;
+    --blue-hover: #15b8c1;
+    --mintgreen: #62d09d; 
+    --mintgreen-hover: #54a382;
+    --green: #8bc34a; 
+    --green-hover: #77a138; 
+    --orange: #ffa15d; 
+    --orange-hover: #e6894e;
+    /*Fonts*/
+    --main-text: 'Raleway'; 
+    --tiny-text: 'Montserrat'; 
+    --para-text: 'Roboto';
 }

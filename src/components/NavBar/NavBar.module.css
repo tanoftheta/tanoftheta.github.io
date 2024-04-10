@@ -1,7 +1,9 @@
+@import '../../vars.css'; 
+
 #Title {
     color: black;
     opacity: 0.8;
-    font-family: 'Raleway';
+    font-family: var(--main-text);
 }
 .navbar {
     position: fixed; 
@@ -56,7 +58,7 @@
 
 .color-bar span {
     font-size: 1vw; /* Adjust the font size as needed */
-    font-family: 'Montserrat';
+    font-family: var(--tiny-text); 
     font-weight: 'bold';
     color: #000000; /* Text color */
 }

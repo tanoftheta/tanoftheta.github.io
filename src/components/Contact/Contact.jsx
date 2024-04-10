@@ -37,14 +37,14 @@ export const Contact = () => {
 
     return (
         <section id='contact' className={styles.section}>
-            <div className="container d-flex justify-content-center align-items-center">
+            <div className="container-fluid d-flex justify-content-center align-items-center">
                 <div className={styles.contactFormContainer}>
                     <div className='row'>
                         <h1 className={styles.Title}>Get in touch</h1>
                     </div>
                     <div className='formContainer'>
                         <form ref={form} onSubmit={sendEmail}>
-                            <div className='row mb-4'>
+                            <div className='row' style={{marginBottom: '1.5rem'}}>
                                 <div className='col-3 d-flex justify-content-end'>
                                     <label className={`${styles.label} me-2`}>Name:</label>
                                 </div>
@@ -52,7 +52,7 @@ export const Contact = () => {
                                     <input type="text" name="from_name" className={styles.formField} />
                                 </div>
                             </div>
-                            <div className='row mb-4'>
+                            <div className='row'  style={{marginBottom: '1.5rem'}}>
                                 <div className='col-3 d-flex justify-content-end'>
                                     <label className={`${styles.label} me-2`}>Email:</label>
                                 </div>
@@ -60,7 +60,7 @@ export const Contact = () => {
                                     <input type="email" name="from_email" className={styles.formField} />
                                 </div>
                             </div>
-                            <div className='row mb-5'>
+                            <div className='row' style={{marginBottom: '2rem'}}>
                                 <div className='col-3 d-flex justify-content-end'>
                                     <label className={`${styles.label} me-2`}>Message:</label>
                                 </div>

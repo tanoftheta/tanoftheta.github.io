@@ -7,9 +7,11 @@
 .contactFormContainer{
     margin-top: 20vh;
     background-color: var(--orange);
-    height: 60vh;
-    width: 60vh; 
     border-radius: 10%; 
+    width: 60vh;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Add a subtle box shadow */
+    border: 2px solid rgba(255, 255, 255, 0.2); /* Add a border with transparency */
+    border-style: inset; 
 }
 
 .Title{
@@ -17,7 +19,7 @@
     justify-content: center;
     margin-top: 2vh;
     font-family: var(--main-text);
-    margin-bottom: 5vh; 
+    margin-bottom: 5vh;
 }
 
 .btnCustom{
@@ -25,6 +27,10 @@
     color: white;
     margin-top: 2vh;
     font-family: var(--main-text);
+    margin-bottom: 2vh;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Add a subtle box shadow */
+    border: 2px solid rgba(255, 255, 255, 0.2); /* Add a border with transparency */
+    border-style: inset; 
 }
 
 .btnCustom:hover{
@@ -33,7 +39,6 @@
 }
 
 .formGroup{
-    width: 75%;
     display: flex;
     justify-content: center;
     margin-bottom: 2vh;
@@ -46,8 +51,17 @@
 
 .label{
     font-family: var(--tiny-text);
+    font-size: 1rem; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
+@media screen and (max-width: 768px) {
+    .label {
+        font-size: 0.8rem;
+        width: 1vw;
+    }
+}
 .formField{
-    width: 90%;
+    width: 90%; 
+    max-width: 450px;
 }

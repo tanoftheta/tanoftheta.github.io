@@ -103,7 +103,7 @@ function Viz({ timeSpent, scrollToSection }) {
     }, [timeSpent]);
 
     return (
-        <div className='container' style={{height: '100%', width: '100%'}}>
+        <div className='container mt-2' style={{height: '100%', width: '100%'}}>
             <canvas id="theViz"></canvas>
         </div>
     );

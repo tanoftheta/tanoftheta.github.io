@@ -2,10 +2,18 @@
 
 .section {
     height: 100vh; 
+    background-color: var(--mintgreen);
+    background-image: 
+        linear-gradient(0deg, #ffffff 1px, transparent 1px),
+        linear-gradient(90deg, #ffffff 1px, transparent 1px);
+    background-size: 25px 25px;
+    background-position: -1px -1px;
+    display: flex;
+    align-items: center;
 }
 
 .contactFormContainer{
-    margin-top: 20vh;
+    margin-top: 15vh;
     background-color: var(--orange);
     border-radius: 10%; 
     width: 60vh;

@@ -30,7 +30,7 @@ function Viz({ timeSpent, scrollToSection }) {
                 animation: false,
                 plugins: {
                     title: {
-                        display: true,
+                        display: false,
                         text: "Your visit:",
                         font: {
                             family: 'Roboto Mono',
@@ -41,7 +41,7 @@ function Viz({ timeSpent, scrollToSection }) {
                         align: 'center'
                     },
                     subtitle: {
-                        display: true,
+                        display: false,
                         text: "Where your attention has gravitated during your stay.",
                         font: {
                             family: 'Roboto Mono',

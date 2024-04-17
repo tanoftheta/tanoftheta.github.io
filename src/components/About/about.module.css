@@ -31,7 +31,7 @@ rect {
 
 
 .resumeButton{
-    background-color: var(--green);
+    background-color: var(--mintgreen);
     color: white; 
     position: absolute; 
     top:180%;
@@ -44,7 +44,7 @@ rect {
 }
 
 .resumeButton:hover{
-    background-color: var(--green-hover);
+    background-color: var(--mintgreen-hover);
     transform: scale(1.1); 
     cursor: pointer; 
 }

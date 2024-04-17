@@ -18,10 +18,11 @@ function App() {
     }
 )
   const [currentSection, setCurrentSection] = useState('home');
+
   const scrollToSection = (sectionId) => {
     const sectionElement = document.getElementById(sectionId);
     if (sectionElement) {
-      sectionElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      sectionElement.scrollIntoView({ behavior: 'smooth'});
     }
   };
 

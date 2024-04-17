@@ -70,7 +70,7 @@ function App() {
       <Navbar scrollToSection={scrollToSection} currentSection={currentSection} /> 
       <div className={styles.sectionContainer}>
       <Home scrollToSection={scrollToSection} timeSpent={timeSpent} translateValue={translateValue}/>
-        <About  />
+        <About  currentSection={currentSection}/>
         <Projects /> 
         <Contact/> 
       </div>

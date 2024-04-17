@@ -43,7 +43,7 @@ const AboutChart = () => {
                 fact = 'I dont know if you can tell, but I really enjoy working with data. I am particularly interested in machine learning and data science. I make it a goal to find the unsung hero in numbers and tell their story.'
             }
             if (xValue > -0.1 && xValue <= 0.3) {
-                fact = 'Both in my personal and professional life, I am deeply committed to contributing positively to combatting social issues that matter the most to me. Among them are racial inequality, class struggles, and the climate crisis.'
+                fact = 'Both in my personal and professional life, I am deeply committed to contributing positively to combat social issues that matter the most to me. Among them are racial inequality, class struggles, and the climate crisis.'
             }
             if (xValue > 0.3 && xValue <= 0.6000000000000001) {
                 fact = 'In my spare time, I like to code retro 8-bit style mini games. I find pixel art really fun to create!'

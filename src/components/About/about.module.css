@@ -34,7 +34,7 @@ rect {
     background-color: var(--mintgreen);
     color: white; 
     position: absolute; 
-    top:180%;
+    top:190%;
     left: 50%; 
     transition: transform 0.1s ease;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Add a subtle box shadow */

@@ -15,8 +15,8 @@ const AboutChart = () => {
 
         const svg = d3.select(chartContainerRef.current)
             .append("svg")
-            .attr("width", "100%")
-            .attr("height", "100%")
+            .attr("width", `100%`)
+            .attr("height", `100%`)
             .attr("viewBox", `0 0 ${width + margin.left + margin.right} ${height + margin.top + margin.bottom}`)
             .attr("preserveAspectRatio", "xMidYMid")
             .append("g")
@@ -36,14 +36,17 @@ const AboutChart = () => {
             if (xValue >= -1 && xValue <= -.95) {
                 fact = 'Origin (0,0): I am a born and raised New Yorker, first-generation American, and first-generation college student.'
             }
-            if (xValue > -.95 && xValue <= -0.19999999999999996) {
+            if (xValue > -.95 && xValue <= -0.50099999999996) {
                 fact = 'I am an undergraduate student at Hunter College in my final year of a degree in Computer Science with a minor in Mathematics.'
             }
-            if (xValue >= -0.18000000000000005 && xValue <= 0.19999999999999996) {
+            if (xValue > -.50099999999 && xValue <= -.1){
                 fact = 'I dont know if you can tell, but I really enjoy working with data. I am particularly interested in machine learning and data science. I make it a goal to find the unsung hero in numbers and tell their story.'
             }
-            if (xValue >= 0.21999999999999997 && xValue <= 0.6000000000000001) {
-                fact = 'Both in my personal and professional life, I am deeply committed to contributing positively to the social causes that matter the most to me. Among them are racial inequality, class struggles, and the climate crisis.'
+            if (xValue > -0.1 && xValue <= 0.3) {
+                fact = 'Both in my personal and professional life, I am deeply committed to contributing positively to combatting social issues that matter the most to me. Among them are racial inequality, class struggles, and the climate crisis.'
+            }
+            if (xValue > 0.3 && xValue <= 0.6000000000000001) {
+                fact = 'In my spare time, I like to code retro 8-bit style mini games. I find pixel art really fun to create!'
             }
             if (xValue >= 0.61 && xValue <= 1) {
                 fact = 'Outside of my love for numbers and programming, I am an avid reader, doting cat owner, and ramen lover. <br>I have 5 years of experience working in restaurants in NYC, Ive even made ramen for presidential candidates!';

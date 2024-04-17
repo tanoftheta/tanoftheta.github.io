@@ -1,7 +1,17 @@
-import React, { useEffect } from 'react';
+import React, { useEffect  , useState} from 'react';
+import styles from './Home/home.module.css'; 
 import Chart from 'chart.js/auto';
 
-function Viz({ timeSpent, scrollToSection }) {
+function Viz({ timeSpent, scrollToSection, translateValue }) {
+    const [isAnimationEnabled, setIsAnimationEnabled] = useState(true);
+
+    useEffect(() => {
+        const timeoutId = setTimeout(() => {
+            setIsAnimationEnabled(false);
+        }, 2000);
+        return () => clearTimeout(timeoutId);
+    }, []);
+
     useEffect(() => {
         const ctx = document.getElementById('theViz').getContext('2d');
         if (window.theViz instanceof Chart) {
@@ -103,8 +113,8 @@ function Viz({ timeSpent, scrollToSection }) {
     }, [timeSpent]);
 
     return (
-        <div className='container mt-2' style={{height: '100%', width: '100%'}}>
-            <canvas id="theViz"></canvas>
+        <div className={`container mt-2 ${isAnimationEnabled ? styles.moveInFromBottom : null}`} style={{ height: '100%', width: '100%', transform: `translateY(-${translateValue/2}px)` }}>
+            <canvas id="theViz" style={{translateX: '100px'}}></canvas>
         </div>
     );
 }

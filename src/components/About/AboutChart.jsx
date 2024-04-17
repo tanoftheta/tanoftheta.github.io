@@ -40,7 +40,7 @@ const AboutChart = () => {
                 fact = 'I am an undergraduate student at Hunter College in my final year of a degree in Computer Science with a minor in Mathematics.'
             }
             if (xValue >= -0.18000000000000005 && xValue <= 0.19999999999999996) {
-                fact = 'I dont know if you can tell, but I really like data. I am particularly interested in machine learning and data science. I enjoy finding the unsung hero in numbers and telling that story.'
+                fact = 'I dont know if you can tell, but I really enjoy working with data. I am particularly interested in machine learning and data science. I make it a goal to find the unsung hero in numbers and tell their story.'
             }
             if (xValue >= 0.21999999999999997 && xValue <= 0.6000000000000001) {
                 fact = 'Both in my personal and professional life, I am deeply committed to contributing positively to the social causes that matter the most to me. Among them are racial inequality, class struggles, and the climate crisis.'

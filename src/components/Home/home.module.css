@@ -24,16 +24,16 @@
     }
 }
 
-.moveInFromRight {
-    animation: moveInFromRight 0.5s ease forwards;
+.moveInFromBottom {
+    animation: moveInFromBottom 0.5s ease forwards;
 }
 
-@keyframes moveInFromRight {
+@keyframes moveInFromBottom {
     from {
-        transform: translateX(100%);
+        transform: translateY(100%);
     }
     to {
-        transform: translateX(0);
+        transform: translateY(0);
     }
 }
 
@@ -48,4 +48,8 @@
 .section {
     height: 100vh; 
     scroll-snap-align: start;
+}
+
+.scrollTranslate {
+    transition: transform 0.3s ease-out;
 }

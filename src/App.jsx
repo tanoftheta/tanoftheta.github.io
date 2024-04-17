@@ -8,6 +8,7 @@ import { Projects } from "./components/Projects/Projects";
 import { Contact } from "./components/Contact/Contact";
 
 function App() {
+  const [translateValue, setTranslateValue] = useState(0);
   const [timeSpent, setTimeSpent] = useState(
     {
         home: 0,
@@ -27,6 +28,12 @@ function App() {
 
   useEffect(() => {
     const handleScroll = () => {
+      const scrollY = window.scrollY;
+      if (scrollY <= 5) {
+          setTranslateValue(0);
+      } else if (scrollY <= 1000) {
+          setTranslateValue(scrollY);
+      }
       const sections = ['home', 'about', 'projects', 'contact'];
 
       for (const section of sections) {
@@ -61,10 +68,10 @@ function App() {
     <div className={styles.body}>
       <Navbar scrollToSection={scrollToSection} currentSection={currentSection} /> 
       <div className={styles.sectionContainer}>
-      <Home scrollToSection={scrollToSection} timeSpent={timeSpent} id="home"/>
-        <About id="about" />
-        <Projects id="projects" /> 
-        <Contact id="contact" /> 
+      <Home scrollToSection={scrollToSection} timeSpent={timeSpent} translateValue={translateValue}/>
+        <About  />
+        <Projects /> 
+        <Contact/> 
       </div>
     </div>
   );

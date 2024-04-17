@@ -34,19 +34,19 @@ const AboutChart = () => {
             const yValue = Math.tan(xValue);
             let fact = ''
             if (xValue >= -1 && xValue <= -.95) {
-                fact = 'Origin (0,0): I am a born and raised New Yorker.'
+                fact = 'Origin (0,0): I am a born and raised New Yorker, first-generation American, and first-generation college student.'
             }
             if (xValue > -.95 && xValue <= -0.19999999999999996) {
                 fact = 'I am an undergraduate student at Hunter College in my final year of a degree in Computer Science with a minor in Mathematics.'
             }
             if (xValue >= -0.18000000000000005 && xValue <= 0.19999999999999996) {
-                fact = 'I dont know if you can tell, but I really like data. I am particularly interested in machine learning and data science.'
+                fact = 'I dont know if you can tell, but I really like data. I am particularly interested in machine learning and data science. I enjoy finding the unsung hero in numbers and telling that story.'
             }
             if (xValue >= 0.21999999999999997 && xValue <= 0.6000000000000001) {
-                fact = 'Both in my personal and professional life, I am deeply committed to conttibuting positively to the social causes that metter the most to me. Among them are racial inequality, class struggles, and the climate crisis.'
+                fact = 'Both in my personal and professional life, I am deeply committed to contributing positively to the social causes that matter the most to me. Among them are racial inequality, class struggles, and the climate crisis.'
             }
             if (xValue >= 0.61 && xValue <= 1) {
-                fact = 'Outside of my love for numbers and programming, I am an avid reader, doting cat owner, and ramen lover.'
+                fact = 'Outside of my love for numbers and programming, I am an avid reader, doting cat owner, and ramen lover. <br>I have 5 years of experience working in restaurants in NYC, Ive even made ramen for presidential candidates!';
             }
             dataPoints.push({ x: xValue, y: yValue , fact: fact});
         }
@@ -88,11 +88,24 @@ const AboutChart = () => {
             circle.attr("cx", xPos)
             .attr("cy", yPos);
 
+            const tooltipWidth = tooltip.node().offsetWidth;
+            const tooltipHeight = tooltip.node().offsetHeight;
+        
+            let tooltipLeft = xPos + margin.left;
+            let tooltipTop = yPos + margin.top;
+        
+            if (tooltipLeft + tooltipWidth > window.innerWidth) {
+                tooltipLeft = window.innerWidth - tooltipWidth;
+            }
+            if (tooltipTop + tooltipHeight > window.innerHeight) {
+                tooltipTop = window.innerHeight - tooltipHeight;
+            }
+        
             tooltip
-            .style("display", "block")
-            .style("left", `${xPos}px`)
-            .style("top",  `${yPos}px + 100vh`)
-            .html(`<strong> ${d.fact} </strong>`)
+                .style("display", "block")
+                .style("left", `${tooltipLeft}px`)
+                .style("top",  `${tooltipTop}px + 100vh`)
+                .html(`<strong> ${d.fact} </strong>`);
         })
         const circle = svg.append("circle")
         .attr("cx", 0)  
@@ -113,7 +126,8 @@ const AboutChart = () => {
             .attr("y", -margin.top / 2)
             .attr("text-anchor", "middle")
             .style("font-size", "30px")
-            .text("As x approaches infinity, learn about Tan");
+            .style("font-weight", 'bold')
+            .text("As x approaches ∞, learn about me");
 
 
         svg.append("g")

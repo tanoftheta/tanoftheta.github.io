@@ -6,17 +6,19 @@ const AboutChart = () => {
     const chartContainerRef = useRef(null);
 
     useEffect(() => {
-        const margin = { top: 70, right: 30, bottom: 40, left: 80 };
-        const width = 1000 - margin.left - margin.right;
-        const height = 500 - margin.top - margin.bottom;
+        const margin = { top: 0.1 * window.innerHeight, right: 0.03 * window.innerWidth, bottom: 0.08 * window.innerHeight, left: 0.08 * window.innerWidth };
+        const width = window.innerWidth - margin.left - margin.right;
+        const height = window.innerHeight - margin.top - margin.bottom;
 
         // Clear previous chart
         d3.select(chartContainerRef.current).select("svg").remove();
 
         const svg = d3.select(chartContainerRef.current)
             .append("svg")
-            .attr("width", width + margin.left + margin.right)
-            .attr("height", height + margin.top + margin.bottom)
+            .attr("width", "100%")
+            .attr("height", "100%")
+            .attr("viewBox", `0 0 ${width + margin.left + margin.right} ${height + margin.top + margin.bottom}`)
+            .attr("preserveAspectRatio", "xMidYMid")
             .append("g")
             .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
@@ -48,8 +50,6 @@ const AboutChart = () => {
             }
             dataPoints.push({ x: xValue, y: yValue , fact: fact});
         }
-
-        console.log(dataPoints)
 
         const xScale = d3.scaleLinear()
             .domain(d3.extent(dataPoints, d => d.x))
@@ -90,8 +90,8 @@ const AboutChart = () => {
 
             tooltip
             .style("display", "block")
-            .style("left", `${xPos + 100}px`)
-            .style("top",  `${yPos + 50}px + 100vh`)
+            .style("left", `${xPos}px`)
+            .style("top",  `${yPos}px + 100vh`)
             .html(`<strong> ${d.fact} </strong>`)
         })
         const circle = svg.append("circle")

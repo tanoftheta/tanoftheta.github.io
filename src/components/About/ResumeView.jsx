@@ -1,12 +1,9 @@
 import React from 'react'; 
 
-export const ResumeView = ({onClose}) => {
+export const ResumeView = () => {
     return (
-        <div className="modal">
-          <div className="modal-content">
-            <button className="close-button" onClick={onClose}>Close</button>
-            <embed src="/resume.pdf" type="application/pdf" width="100%" height="600px" />
-          </div>
-        </div>
-      );
+        <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+            Open Resume
+        </a>
+    );
 }

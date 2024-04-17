@@ -34,11 +34,13 @@ rect {
     background-color: var(--green);
     color: white; 
     position: absolute; 
-    top:105%; 
-    left: 80%; 
+    top:180%;
+    left: 50%; 
     transition: transform 0.1s ease;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Add a subtle box shadow */
     border: 2px solid rgba(255, 255, 255, 0.2); 
+    text-decoration: none;
+    padding: .5rem; 
 }
 
 .resumeButton:hover{

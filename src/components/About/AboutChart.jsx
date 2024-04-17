@@ -22,7 +22,7 @@ const AboutChart = () => {
             .append("g")
             .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
-        const tooltip = d3.select(chartContainerRef.current)
+        const tooltip = d3.select('#about')
         .append("div")
         .attr("class", "tooltip"); 
 
@@ -94,8 +94,8 @@ const AboutChart = () => {
             const tooltipWidth = tooltip.node().offsetWidth;
             const tooltipHeight = tooltip.node().offsetHeight;
         
-            let tooltipLeft = xPos + margin.left;
-            let tooltipTop = yPos + margin.top;
+            let tooltipLeft = xPos; 
+            let tooltipTop = yPos; 
         
             if (tooltipLeft + tooltipWidth > window.innerWidth) {
                 tooltipLeft = window.innerWidth - tooltipWidth;
@@ -109,6 +109,10 @@ const AboutChart = () => {
                 .style("left", `${tooltipLeft}px`)
                 .style("top",  `${tooltipTop}px + 100vh`)
                 .html(`<strong> ${d.fact} </strong>`);
+        })
+
+        listeningRect.on("mouseleave", function() {
+            tooltip.style("display", "none");
         })
         const circle = svg.append("circle")
         .attr("cx", 0)  

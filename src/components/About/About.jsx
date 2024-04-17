@@ -11,7 +11,7 @@ export const About = () => {
 
     return (
         <section id='about' className={styles.section}>
-            <div className="chart-container d-flex justify-content-center" style={{ width: '100%', height:'60%'}}>
+            <div className={`chart-container d-flex justify-content-center ${styles.chartContainer}`}>
                 <AboutChart/> 
             </div>
             <div className="button-container">

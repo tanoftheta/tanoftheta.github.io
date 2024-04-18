@@ -12,10 +12,10 @@
     justify-content: flex-end;
     align-items: center;
     width: 100%;
-    margin-top: 10vh; 
-    height: 10vh; 
     z-index: 1000;
     padding: 2vh;
+    background-color:#f1e2ce; 
+    border-bottom: 2px solid black; 
 }
 .slider{
     -webkit-appearance: none;
@@ -41,19 +41,23 @@
 
 .color-scale {
     display: flex;
-    align-items: center;
     justify-content: center;
     width: 60%;
+    margin-bottom: -2.1vh;  
 }
 
 .color-bar {
     display: flex;
     width: 15%;
-    height: 5vh; /* Using viewport height (vh) */
+    height: 5vh; 
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    border: 2px solid black
+    border-right: 2px solid black; 
+    border-left: 2px solid black; 
+    border-top: 2px solid black; 
+    border-top-right-radius: 10%;
+    border-top-left-radius: 10%;
 
 }
 

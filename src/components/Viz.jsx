@@ -88,9 +88,6 @@ function Viz({ timeSpent, scrollToSection, translateValue }) {
                         }
                     }
                 },
-                layout: {
-                    padding: 10
-                },
                 onHover: function (event, elements) {
                     if (elements) {
                         event.native.target.style.cursor = 'pointer';

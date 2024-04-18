@@ -38,6 +38,9 @@ function Viz({ timeSpent, scrollToSection, translateValue }) {
             },
             options: {
                 animation: false,
+                layout: {
+                    padding: 10,
+                }, 
                 plugins: {
                     title: {
                         display: false,
@@ -110,7 +113,7 @@ function Viz({ timeSpent, scrollToSection, translateValue }) {
     }, [timeSpent]);
 
     return (
-        <div className={`container mt-2 ${isAnimationEnabled ? styles.moveInFromBottom : null}`} style={{ height: '100%', width: '100%', transform: `translateY(-${translateValue/2}px)` }}>
+        <div className={`container mt-2 ${isAnimationEnabled ? styles.moveInFromBottom : null}`} style={{ height: '100%', width: '100%', transform: `translateY(-${translateValue/2}px)`, zIndex: 10}}>
             <canvas id="theViz" style={{translateX: '100px'}}></canvas>
         </div>
     );

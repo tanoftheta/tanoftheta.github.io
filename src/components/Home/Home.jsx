@@ -14,6 +14,7 @@ export const Home = ({ scrollToSection, timeSpent, translateValue }) => {
 
     return (
         <section id='home' className={styles.section}>
+            <div className="container-fluid d-flex justify-content-center align-items-center">
             <div className={styles.gridContainer}>
                 <div className="container">
                     <div className="row d-flex align-items-center">
@@ -24,6 +25,7 @@ export const Home = ({ scrollToSection, timeSpent, translateValue }) => {
                             <Viz scrollToSection={scrollToSection} timeSpent={timeSpent} translateValue={translateValue}/>
                         </div>
                     </div>
+                    </div> 
                 </div>
             </div>
         </section>

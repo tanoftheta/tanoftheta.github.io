@@ -33,6 +33,7 @@ const AboutChart = () => {
             const xValue = -1 + (i / numPoints) * 2;
             const yValue = Math.tan(xValue);
             let fact = ''
+            let image= '';
             if (xValue >= -1 && xValue <= -.95) {
                 fact = 'Origin (0,0): I am a born and raised New Yorker, first-generation American, and first-generation college student.'
             }
@@ -47,10 +48,13 @@ const AboutChart = () => {
             }
             if (xValue > 0.3 && xValue <= 0.6000000000000001) {
                 fact = 'In my spare time, I like to code retro 8-bit style mini games. I find pixel art really fun to create!'
+                image = '<br> <img src="public/gameDev.PNG" alt="pixelArt" style="max-width: 100px; max-height: 100px;" />';
             }
             if (xValue >= 0.61 && xValue <= 1) {
                 fact = 'Outside of my love for numbers and programming, I am an avid reader, doting cat owner, and ramen lover. <br>I have 5 years of experience working in restaurants in NYC, Ive even made ramen for presidential candidates!';
+                image = '<br> <img src="public/kulfiandi.png" alt="catpic" style="max-width: 110px; max-height: 110px;" />';
             }
+            fact += image; 
             dataPoints.push({ x: xValue, y: yValue , fact: fact});
         }
 

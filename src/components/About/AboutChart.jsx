@@ -22,7 +22,7 @@ const AboutChart = () => {
             .append("g")
             .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
-        const tooltip = d3.select('#about')
+        const tooltip = d3.select('#chartContainer')
         .append("div")
         .attr("class", "tooltip"); 
 

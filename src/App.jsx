@@ -66,7 +66,7 @@ function App() {
   }, [currentSection]);
 
   return (
-    <div className={styles.body}>
+    <div>
       <Navbar scrollToSection={scrollToSection} currentSection={currentSection} /> 
       <div className={styles.sectionContainer}>
       <Home scrollToSection={scrollToSection} timeSpent={timeSpent} translateValue={translateValue}/>

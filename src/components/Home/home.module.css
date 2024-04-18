@@ -1,7 +1,10 @@
 @import '../../vars.css';
 .grid-container {
-    border-top: 2px solid black; 
-    height: 100%; 
+    position: absolute; 
+    margin-top: 13vh; 
+    border: 2px solid black; 
+    height: 87vh;
+    width: 98%; 
     background-image: 
         linear-gradient(0deg, var(--blue) 1px, transparent 1px),
         linear-gradient(90deg, var(--blue) 1px, transparent 1px);
@@ -46,7 +49,10 @@
 
 
 .section {
-    height: 100vh; 
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    border-bottom: 2px solid black; 
 }
 
 .scrollTranslate {

@@ -7,9 +7,7 @@ export const Projects = () => {
     return (
         <section className={styles.section}>
             <div className="container-fluid d-flex justify-content-center align-items-center" style={{height: '100%'}}>
-                <div className= {styles.gridContainer}>
                     <AudioCard currentProject={currentProject}/> 
-                </div>
             </div>
         </section>
     )

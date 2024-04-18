@@ -12,6 +12,15 @@ export const AudioCard = ({ currentProject }) => {
         backEnd: ['Node', 'Express', 'Google', 'Sequelize'],
         tools: ['Github', 'AWS', 'Firebase', 'Render']
     }
+
+    useEffect(() => {
+        const projectsSection = document.getElementById('audiocardContainer');
+        if (projectsSection) {
+            const rect = projectsSection.getBoundingClientRect();
+            setPosition({ x: rect.right }); 
+        }
+    }, []);
+
     useEffect(() => {
         setIsCurrentProject(currentProject === 'AudioCard');
     }, [currentProject]);
@@ -28,8 +37,9 @@ export const AudioCard = ({ currentProject }) => {
         if (!isDragging) return;
         setPosition({
             x: e.clientX - offset.x,
-            y: e.clientY - offset.y
+            y: e.clientY - offset.y, 
         });
+        console.log(e.clientX); 
     };
     
 
@@ -38,7 +48,7 @@ export const AudioCard = ({ currentProject }) => {
     };
 
     return (
-        <div className={styles.audioCardContainer} style={{ zIndex: isCurrentProject ? '1000' : '0', left: position.x, top: position.y }}
+        <div className={styles.audioCardContainer} style={{ zIndex: isCurrentProject ? '1000' : '0', position: 'relative', left: position.x, top: position.y }}
             onMouseDown={handleMouseDown}
             onMouseMove={handleMouseMove}
             onMouseUp={handleMouseUp}
@@ -60,7 +70,7 @@ export const AudioCard = ({ currentProject }) => {
             <div>
                 <TechStack techs={techs} /> 
             </div>
-            <div className='row align-items-center' style={{ bottom: '15%', left: '250%', transform: 'translateX(-50%)', position: 'absolute'}}>
+            <div className='row align-items-center'>
                 <div className='col d-flex justify-content-end'>
                     <a className={styles.gitLogo} href="https://github.com/csci-499-sp24/AudioCard" target="_blank">
                         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24">
@@ -68,7 +78,7 @@ export const AudioCard = ({ currentProject }) => {
                         </svg>
                     </a>
                 </div>
-                <div className='col d-flex justify-content-center'>
+                <div className='col-1 d-flex justify-content-center'>
                     <h2>|</h2>
                 </div>
                 <div className='col d-flex justify-content-begin'>

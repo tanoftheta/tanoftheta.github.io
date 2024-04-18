@@ -1,9 +1,9 @@
 @import '../../vars.css';
 .grid-container {
     position: absolute; 
-    margin-top: 13vh; 
+    margin-top: 10%; 
     border: 2px solid black; 
-    height: 87vh;
+    height: 80%;
     width: 98%; 
     background-image: 
         linear-gradient(0deg, var(--blue) 1px, transparent 1px),

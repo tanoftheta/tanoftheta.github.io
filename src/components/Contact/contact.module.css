@@ -3,13 +3,26 @@
 .section {
     height: 100vh; 
     background-color: var(--mintgreen);
+    display: flex;
+    justify-content: center; 
+    border-bottom: 2px solid black; 
+    align-items: center;
+}
+
+.grid-container {
+    position: absolute; 
+    margin-top: 10%;  
+    border: 2px solid black; 
+    height: 80%; 
+    width: 98%; 
     background-image: 
-        linear-gradient(0deg, #ffffff 1px, transparent 1px),
-        linear-gradient(90deg, #ffffff 1px, transparent 1px);
+        linear-gradient(0deg, white 1px, transparent 1px),
+        linear-gradient(90deg, white 1px, transparent 1px);
     background-size: 25px 25px;
     background-position: -1px -1px;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .contactFormContainer{

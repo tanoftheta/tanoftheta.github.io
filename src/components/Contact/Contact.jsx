@@ -38,6 +38,7 @@ export const Contact = () => {
     return (
         <section id='contact' className={styles.section}>
             <div className="container-fluid d-flex justify-content-center align-items-center">
+            <div className={styles.gridContainer}>
                 <div className={styles.contactFormContainer}>
                     <div className='row'>
                         <h1 className={styles.Title}>Get in touch</h1>
@@ -78,6 +79,7 @@ export const Contact = () => {
                         </form>
                     </div>
                 </div>
+                </div> 
             </div>
         </section>
     )

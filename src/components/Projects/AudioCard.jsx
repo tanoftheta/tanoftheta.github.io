@@ -51,7 +51,7 @@ export const AudioCard = ({ currentProject }) => {
             <div className='row d-flex justify-content-center'>
                 <div style={{ width: '50%', height: "50%", marginTop: '2%'}}>
                     <video width="100%" height="100%" controls>
-                        <source src="public/AudioCardDemo.mp4" type="video/mp4" />
+                        <source src="AudioCardDemo.mp4" type="video/mp4" />
                         Your browser does not support the video tag.
                     </video>
                 </div>

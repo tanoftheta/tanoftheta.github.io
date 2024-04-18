@@ -26,7 +26,6 @@
 }
 
 .contactFormContainer{
-    margin-top: 15vh;
     background-color: var(--orange);
     border-radius: 10%; 
     width: 60vh;

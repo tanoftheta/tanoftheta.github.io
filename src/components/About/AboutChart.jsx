@@ -39,6 +39,7 @@ const AboutChart = () => {
             }
             if (xValue > -.95 && xValue <= -0.50099999999996) {
                 fact = 'I am an undergraduate student at Hunter College in my final year of a degree in Computer Science with a minor in Mathematics.'
+                image = '<br> <img src="public/hunterCollege.png" alt="hunter" style="max-width: 110px; max-height: 110px;" />';
             }
             if (xValue > -.50099999999 && xValue <= -.1){
                 fact = 'I dont know if you can tell, but I really enjoy working with data. I am particularly interested in machine learning and data science. I make it a goal to find the unsung hero in numbers and tell their story.'
@@ -112,6 +113,7 @@ const AboutChart = () => {
                 .style("display", "block")
                 .style("left", `${tooltipLeft}px`)
                 .style("top",  `${tooltipTop}px + 100vh`)
+                .style("width", '30%')
                 .html(`<strong> ${d.fact} </strong>`);
         })
 
@@ -124,7 +126,7 @@ const AboutChart = () => {
             .attr("r", 0)
             .attr("fill", "red")
             .style("stroke", "white")
-            .attr("opacity", .70)
+            .attr("opacity", 1.0)
             .style("pointer-events", "none");
         
             circle.transition()

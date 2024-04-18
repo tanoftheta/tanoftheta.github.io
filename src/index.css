@@ -8,10 +8,10 @@ rect {
 .tooltip {
     position: absolute; 
     padding: 10px; 
-    background-color: red; 
+    background-color: rgb(202, 70, 70); 
     color: white; 
     border: 1px solid white;
     border-radius: 10px; 
     display: none; 
-    opacity: .75;
+    opacity: 1.0;
 }

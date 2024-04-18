@@ -5,7 +5,7 @@ export const Navbar = ({ scrollToSection, currentSection }) => {
 
     return (
         <div className={styles.navbar}>
-            <h1 id={styles.Title}>TAN'S WEBSITE</h1>
+            <h1 id={styles.Title} onClick={() => scrollToSection('home')}>TAN'S WEBSITE</h1>
             <div className={styles.colorScale}>
                 <div className={styles.colorBar} onClick={() => scrollToSection('home')} style={{ backgroundColor: currentSection == 'home' ? 'white' :'var(--blue-hover)' }}>
                     <span>home</span>

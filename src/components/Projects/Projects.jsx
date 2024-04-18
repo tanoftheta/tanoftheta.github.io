@@ -5,8 +5,8 @@ import {AudioCard} from './AudioCard.jsx';
 export const Projects = () => {
     const [currentProject, setCurrentProject] = useState('AudioCardNot');
     return (
-        <section id='projects' className={styles.section}>
-            <div className="container-fluid d-flex justify-content-center align-items-center">
+        <section className={styles.section}>
+            <div className="container-fluid d-flex justify-content-center align-items-center" style={{height: '100%'}}>
                 <div className= {styles.gridContainer}>
                     <AudioCard currentProject={currentProject}/> 
                 </div>

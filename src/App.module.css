@@ -1,0 +1,15 @@
+.sectionContainer {
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden; 
+    scroll-behavior: smooth;
+    height: 100vh; 
+    width: 400vw; 
+  }
+
+  .section {
+    flex-shrink: 0;
+    height: 100vh; 
+    width:100vw; 
+  }
+  

@@ -1,12 +1,8 @@
-.section {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    border-bottom: 2px solid black; 
+.section{
+    height: 100%;
+    width: 100%; 
 }
-
 .grid-container {
-    position: absolute; 
     margin-top: 10%; 
     border: 2px solid black; 
     height: 80%; 
@@ -23,7 +19,6 @@
 
 .audioCardContainer {
     cursor: pointer; 
-    position: absolute; 
     margin-top: 10%; 
     border: 2px solid black; 
     height: 90%; 

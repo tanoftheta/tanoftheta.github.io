@@ -1,12 +1,9 @@
 .section {
-    height: 100vh; 
-    display: flex;
-    justify-content: center;
     background-color: var(--blue);
-    border-bottom: 2px solid black; 
+    height: 100%;
+    width: 100%; 
 }
 .grid-container {
-    position: absolute; 
     margin-top: 10%; 
     border: 2px solid black; 
     height: 80%;
@@ -22,11 +19,13 @@
 }
 
 .resumeButton{
+    display: flex;
+    align-items: center;
+    position: absolute; 
     background-color: var(--mintgreen);
     color: white; 
-    position: absolute; 
     top:85%;
-    left: 50%; 
+    left: 150%;  
     transition: transform 0.1s ease;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Add a subtle box shadow */
     border: 2px solid rgba(255, 255, 255, 0.2); 

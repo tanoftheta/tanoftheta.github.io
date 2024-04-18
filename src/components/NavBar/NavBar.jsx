@@ -7,16 +7,16 @@ export const Navbar = ({ scrollToSection, currentSection }) => {
         <div className={styles.navbar}>
             <h1 id={styles.Title} onClick={() => scrollToSection('home')}>TAN'S WEBSITE</h1>
             <div className={styles.colorScale}>
-                <div className={styles.colorBar} onClick={() => scrollToSection('home')} style={{ backgroundColor: currentSection == 'home' ? 'white' :'var(--blue-hover)' }}>
+                <div className={styles.colorBar} onClick={() => scrollToSection('home')} style={{ backgroundColor: currentSection == 'home' ? 'white' :'var(--blue-hover)', borderBottom: currentSection == 'home' ? '' : '2px solid black' }}>
                     <span>home</span>
                 </div>
-                <div className={styles.colorBar} onClick={() => scrollToSection('about')} style={{ backgroundColor: currentSection == 'about' ? 'var(--blue)':'var(--mintgreen-hover)' }}>
+                <div className={styles.colorBar} onClick={() => scrollToSection('about')} style={{ backgroundColor: currentSection == 'about' ? 'var(--blue)':'var(--mintgreen-hover)', borderBottom: currentSection == 'about' ? '' : '2px solid black' }}>
                     <span>about</span>
                 </div>
-                <div className={styles.colorBar} onClick={() => scrollToSection('projects')} style={{ backgroundColor: currentSection == 'projects' ? ' white' : 'var(--green-hover)' }}>
+                <div className={styles.colorBar} onClick={() => scrollToSection('projects')} style={{ backgroundColor: currentSection == 'projects' ? ' white' : 'var(--green-hover)',  borderBottom: currentSection == 'projects' ? '' : '2px solid black' }}>
                     <span>projects</span>
                 </div>
-                <div className={styles.colorBar} onClick={() => scrollToSection('contact')} style={{ backgroundColor: currentSection == 'contact' ? 'var(--mintgreen)' : '#b35500' }}>
+                <div className={styles.colorBar} onClick={() => scrollToSection('contact')} style={{ backgroundColor: currentSection == 'contact' ? 'var(--mintgreen)' : '#b35500', borderBottom: currentSection == 'contact' ? '' : '2px solid black' }}>
                     <span>contact</span>
                 </div>
             </div>

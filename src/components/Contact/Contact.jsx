@@ -36,8 +36,8 @@ export const Contact = () => {
     }
 
     return (
-        <section id='contact' className={styles.section}>
-            <div className="container-fluid d-flex justify-content-center align-items-center">
+        <section className={styles.section}>
+            <div className="container-fluid d-flex justify-content-center align-items-center" style={{height: '100%'}}>
             <div className={styles.gridContainer}>
                 <div className={styles.contactFormContainer}>
                     <div className='row'>

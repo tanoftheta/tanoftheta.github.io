@@ -111,8 +111,8 @@ const AboutChart = () => {
         
             tooltip
                 .style("display", "block")
-                .style("left", `${tooltipLeft}px`)
-                .style("top",  `${tooltipTop}px + 100vh`)
+                .style("left", `${tooltipLeft}px + 100vw`)
+                .style("top",  `${tooltipTop}px + 50vh`)
                 .style("width", '30%')
                 .html(`<strong> ${d.fact} </strong>`);
         })

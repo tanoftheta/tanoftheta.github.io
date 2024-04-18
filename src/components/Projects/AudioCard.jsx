@@ -23,7 +23,7 @@ export const AudioCard = ({ currentProject }) => {
             y: e.clientY - position.y
         });
     };
-
+    
     const handleMouseMove = (e) => {
         if (!isDragging) return;
         setPosition({
@@ -31,6 +31,7 @@ export const AudioCard = ({ currentProject }) => {
             y: e.clientY - offset.y
         });
     };
+    
 
     const handleMouseUp = () => {
         setIsDragging(false);
@@ -59,7 +60,7 @@ export const AudioCard = ({ currentProject }) => {
             <div>
                 <TechStack techs={techs} /> 
             </div>
-            <div className='row align-items-center' style={{position: 'absolute', bottom: '5%', left: '50%', transform: 'translateX(-50%)'}}>
+            <div className='row align-items-center' style={{ bottom: '15%', left: '250%', transform: 'translateX(-50%)', position: 'absolute'}}>
                 <div className='col d-flex justify-content-end'>
                     <a className={styles.gitLogo} href="https://github.com/csci-499-sp24/AudioCard" target="_blank">
                         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24">

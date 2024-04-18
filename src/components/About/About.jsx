@@ -12,8 +12,8 @@ export const About = ({ currentSection })=> {
         }
     })
     return (
-        <section id='about' className={styles.section}>
-            <div className="container-fluid d-flex justify-content-center align-items-center">
+        <section className={styles.section}>
+            <div className="container-fluid d-flex justify-content-center align-items-center" style={{height: '100%'}}>
             <div id='chartContainer' className={styles.gridContainer}>
             <div className={`chart-container d-flex justify-content-center ${styles.chartContainer} ${isShowing? styles.showAnimation : ''}`}>
                 <AboutChart/> 

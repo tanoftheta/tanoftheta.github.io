@@ -26,30 +26,31 @@ function App() {
     }
   };
 
-
   useEffect(() => {
     const handleScroll = () => {
-      const scrollY = window.scrollY;
-      if (scrollY <= 5) {
-          setTranslateValue(0);
-      } else if (scrollY <= 1000) {
-          setTranslateValue(scrollY);
+      const scrollX = window.scrollX;
+      if (scrollX <= 5) {
+        setTranslateValue(0);
+      } else if (scrollX <= 800) {
+        setTranslateValue(scrollX);
       }
+    
       const sections = ['home', 'about', 'projects', 'contact'];
-
+      const viewportWidth = window.innerWidth;
       for (const section of sections) {
         const sectionElement = document.getElementById(section);
         if (sectionElement) {
           const rect = sectionElement.getBoundingClientRect();
-
-          if (rect.top <= window.innerHeight * 0.49 && rect.bottom >= window.innerHeight * 0.51) {
+          // Check if the center of the section is within the viewport
+          const sectionCenter = rect.left + rect.width / 2;
+          if (sectionCenter >= 0 && sectionCenter <= viewportWidth) {
             setCurrentSection(section);
             break;
           }
         }
       }
     };
-
+  
     const interval = setInterval(() => {
       setTimeSpent(prevTimeSpent => ({
         ...prevTimeSpent,
@@ -59,20 +60,30 @@ function App() {
 
     window.addEventListener('scroll', handleScroll);
 
+
     return () => {
       clearInterval(interval);
       window.removeEventListener('scroll', handleScroll);
     };
   }, [currentSection]);
+  
 
   return (
     <div>
       <Navbar scrollToSection={scrollToSection} currentSection={currentSection} /> 
       <div className={styles.sectionContainer}>
-      <Home scrollToSection={scrollToSection} timeSpent={timeSpent} translateValue={translateValue}/>
-        <About  currentSection={currentSection}/>
-        <Projects /> 
-        <Contact/> 
+        <div id='home' className={styles.section}>
+          <Home scrollToSection={scrollToSection} timeSpent={timeSpent} translateValue={translateValue}/>
+        </div>
+        <div id= 'about' className={styles.section}>
+          <About currentSection={currentSection}/>
+        </div>
+        <div id = 'projects' className={styles.section}>
+          <Projects /> 
+        </div>
+        <div id = 'contact' className={styles.section}>
+          <Contact/> 
+        </div>
       </div>
     </div>
   );

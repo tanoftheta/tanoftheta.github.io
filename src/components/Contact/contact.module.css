@@ -1,16 +1,14 @@
 @import '../../vars.css'; 
 
-.section {
-    height: 100vh; 
+.section{
     background-color: var(--mintgreen);
-    display: flex;
-    justify-content: center; 
-    border-bottom: 2px solid black; 
-    align-items: center;
+    height: 100%;
+    width: 100%; 
+    border-bottom: 2px solid black;
 }
 
 .grid-container {
-    position: absolute; 
+    background-color: var(--mintgreen);
     margin-top: 10%;  
     border: 2px solid black; 
     height: 80%; 

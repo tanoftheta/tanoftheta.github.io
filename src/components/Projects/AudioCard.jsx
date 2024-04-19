@@ -2,16 +2,26 @@ import React, { useState, useEffect } from 'react';
 import styles from './projects.module.css';
 import { TechStack } from './TechStack';
 
-export const AudioCard = ({ currentProject }) => {
+export const AudioCard = ({ currentProject, currentSection  }) => {
     const [isCurrentProject, setIsCurrentProject] = useState(true);
     const [isDragging, setIsDragging] = useState(false);
     const [position, setPosition] = useState({ x: 0, y: 0 });
     const [offset, setOffset] = useState({ x: 0, y: 0 });
     const techs = {
-        frontEnd: ['JS', 'React', 'HTML5', 'CSS'],
-        backEnd: ['Node', 'Express', 'Google', 'Sequelize'],
-        tools: ['Github', 'AWS', 'Firebase', 'Render']
-    }
+            JS: { label: 'JavaScript', value: 0.85 , stack: 'frontEnd', info: 'The majority of this project was coded in javascript'},
+            React: { label: 'React', value: .9, stack: 'frontEnd', info: 'Used React in frontend to create a component-based architecture and dynamic UI' },
+            CSS: { label: 'CSS', value: 0.3 , stack: 'frontEnd', info: 'Customized UI/UX, made a responsive design with animations, transitions, and cross-browser compatibility'},
+            Axios: {label: 'Axios', value: .5, stack: 'frontEnd' , info: 'Used for HTTP requests'},
+            Node: { label: 'Node', value: 1, stack: 'backEnd', info: 'Used Node for server-side development' },
+            Express: { label: 'Express', value: 0.5, stack:'backEnd', info: 'Used for middleware and routing for API endpoints'},
+            Google: { label: 'Google Cloud APIs', value: 0.55, stack: 'backEnd',  info: 'Used Google Cloud Text to Speech, Speech to Text, and Natural Language' },
+            Sequelize: { label: 'Sequelize ORM', value: 0.3, stack: 'backEnd', info: 'Used to interact with our MySQL database' },
+            Github: { label: 'Github', value: 0.8, stack: 'tools', info: 'Used GitHub projects for backlog and sprint planning, code review on pull requests' },
+            AWS: { label: 'Amazon Web Services', value: 0.6, stack: 'tools', info: "Used to host our MySQL database, S3 bucket to store user profile pics"},
+            Firebase: { label: 'Firebase', stack: 'tools' , value: 0.3, info: 'Used Firebase for user authentication' },
+            Render: { label: 'Render', value: 0.2, stack: 'tools', info: 'Free server to deploy our live product' }
+    };
+    
 
     useEffect(() => {
         const projectsSection = document.getElementById('audiocardContainer');
@@ -39,7 +49,6 @@ export const AudioCard = ({ currentProject }) => {
             x: e.clientX - offset.x,
             y: e.clientY - offset.y, 
         });
-        console.log(e.clientX); 
     };
     
 
@@ -60,15 +69,15 @@ export const AudioCard = ({ currentProject }) => {
                 An audio-based flashcard app that uses automated speech recognition to test its users.
             </div>
             <div className='row d-flex justify-content-center'>
-                <div style={{ width: '50%', height: "50%", marginTop: '2%'}}>
-                    <video width="100%" height="100%" controls>
+                <div className='col d-flex justify-content-center' style={{width: '100%', height: '100%', marginTop: '2vh', marginLeft: '2vw'}}>
+                    <video height='100%' width='100%' controls>
                         <source src="AudioCardDemo.mp4" type="video/mp4" />
                         Your browser does not support the video tag.
                     </video>
                 </div>
+                <div className={`col d-flex justify-content-center ${styles.vizContainer}`}>
+                <TechStack techs={techs} currentSection={currentSection}/> 
             </div>
-            <div>
-                <TechStack techs={techs} /> 
             </div>
             <div className='row align-items-center'>
                 <div className='col d-flex justify-content-end'>

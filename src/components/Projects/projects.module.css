@@ -28,3 +28,8 @@
 .gitLogo:hover{
     transform: scale(1.1); 
 }
+
+.vizContainer{
+    width: 50vw; 
+    height: 50vh; 
+}

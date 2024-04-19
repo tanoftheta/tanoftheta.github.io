@@ -6,7 +6,7 @@ import github from './icons/github.png'
 import firebase from './icons/firebase.png'
 import aws from './icons/aws.png'
 import node from './icons/node.png'
-import sequelize from './icons/sequelize.png'
+import sequelize from './icons/Sequelize.png'
 
 export const getSvg = (tech) => {
     switch (tech) {

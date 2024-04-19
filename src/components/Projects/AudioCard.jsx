@@ -79,7 +79,7 @@ export const AudioCard = ({ currentProject, currentSection  }) => {
                 <TechStack techs={techs} currentSection={currentSection}/> 
             </div>
             </div>
-            <div className='row align-items-center'>
+            <div className='row align-items-center' style={{marginTop: '5vh'}}>
                 <div className='col d-flex justify-content-end'>
                     <a className={styles.gitLogo} href="https://github.com/csci-499-sp24/AudioCard" target="_blank">
                         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24">

@@ -62,6 +62,7 @@ export const AudioCard = ({ currentProject, currentSection  }) => {
             onMouseMove={handleMouseMove}
             onMouseUp={handleMouseUp}
         >
+        <div className='container'>
             <div className='row d-flex justify-content-center'>
                 <h1 className='d-flex justify-content-center'>AudioCard</h1>
             </div>
@@ -95,6 +96,7 @@ export const AudioCard = ({ currentProject, currentSection  }) => {
                         <i className={`bi bi-link ${styles.LinkIcon}`}></i>
                     </a>
                 </div>
+            </div>
             </div>
         </div>
     );

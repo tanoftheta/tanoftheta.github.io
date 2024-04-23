@@ -29,9 +29,9 @@ export const AudioCard = ({}) => {
             <div className='row d-flex justify-content-center'>
                 An audio-based flashcard app that uses automated speech recognition to test its users.
             </div>
-            <div className='row d-flex justify-content-center'>
+            <div className='row d-flex' style={{marginTop: '2vh'}}>
                 <div className={`col ${styles.vidContainer}`}>
-                    <video height='100%' width='100%' controls>
+                    <video height='auto' width='100%' controls>
                         <source src="AudioCardDemo.mp4" type="video/mp4" />
                         Your browser does not support the video tag.
                     </video>

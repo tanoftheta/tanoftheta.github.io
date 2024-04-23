@@ -24,7 +24,7 @@ export const TreesAndRent = ({}) => {
                     An exploratory data analysis on the NYC tree census and median rent in NYC neighborhoods. 
                 </div>
                 <div className='row d-flex ' style={{marginTop: '2vh'}}>
-                    <div className='col'>
+                    <div className='col d-flex justify-content-center align-items-center'>
                         <img style={{ maxWidth: '100%', height: 'auto' }} src='treeProjImage.png' alt="demo_image"/> 
                     </div>
                     <div className={`col d-flex justify-content-center ${styles.vizContainer}`}>

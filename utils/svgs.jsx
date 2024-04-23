@@ -7,11 +7,17 @@ import firebase from './icons/firebase.png'
 import aws from './icons/aws.png'
 import node from './icons/node.png'
 import sequelize from './icons/Sequelize.png'
+import python from './icons/python.png'
+import pandas from './icons/pandas.png'
+import numpy from './icons/numpy.png'
+import jupyter from './icons/jupyter.png'
 
 export const getSvg = (tech) => {
     switch (tech) {
         case 'JavaScript':
             return javascript;
+        case 'Python': 
+            return python; 
         case 'React':
             return react; 
         case 'CSS': 
@@ -27,7 +33,14 @@ export const getSvg = (tech) => {
         case 'Node':
             return node; 
         case 'Sequelize ORM': 
-            return sequelize; 
+            return sequelize;
+        case 'Jupyter Notebook': 
+            return jupyter;
+        case 'Pandas': 
+            return pandas; 
+        case 'NumPy': 
+            return numpy;
+
         default:
             return ''; 
     }

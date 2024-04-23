@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import Chart from 'chart.js/auto';
 import { getSvg } from '../../../utils/svgs';
 
-export const TechStack = ({ techs, currentSection }) => {
+export const TechStack = ({ techs}) => {
     const chartRef = useRef(null);
 
     useEffect(() => {
@@ -16,13 +16,13 @@ export const TechStack = ({ techs, currentSection }) => {
         const backgroundColors = items.map(item => {
             switch (techs[item].stack) {
                 case 'frontEnd':
-                    return 'rgba(255, 99, 132, 0.6)';
+                    return 'rgba(255, 99, 132, 1)'; 
                 case 'backEnd':
-                    return 'rgba(54, 162, 235, 0.6)';
+                    return 'rgba(54, 162, 235, 1)';
                 case 'tools':
-                    return 'rgba(75, 192, 192, 0.6)';
+                    return 'rgba(75, 192, 192, 1)'; 
                 default:
-                    return 'rgba(255, 206, 86, 0.6)';
+                    return 'rgba(255, 206, 86, 1)'; 
             }
         });
         const ctx = chartRef.current;
@@ -63,7 +63,8 @@ export const TechStack = ({ techs, currentSection }) => {
                     datasets: [{
                         data: data,
                         backgroundColor: backgroundColors, 
-                        hoverOffset: 25
+                        hoverOffset: 25,
+                        borderWidth: 2, 
                     }]
                 },
                 options: {
@@ -81,8 +82,8 @@ export const TechStack = ({ techs, currentSection }) => {
                             display: true,
                             font: {
                                 family: 'Roboto Mono',
-                                size: '20px',
-                                color: '#FF0000', 
+                                size: '30px',
+                                color: '#000000', 
                             } 
                         }, 
                         tooltip: {
@@ -116,6 +117,7 @@ export const TechStack = ({ techs, currentSection }) => {
                             ticks: {
                                 display: false, 
                             }, 
+                            lineWidth: 2,
                         }
                     },
                 }, 

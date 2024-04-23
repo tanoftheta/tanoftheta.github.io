@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styles from './projects.module.css';
 import { TechStack } from './TechStack';
 
-export const AudioCard = ({ currentProject, currentSection  }) => {
-    const [isCurrentProject, setIsCurrentProject] = useState(true);
+export const AudioCard = ({}) => {
     const [isDragging, setIsDragging] = useState(false);
     const [position, setPosition] = useState({ x: 0, y: 0 });
     const [offset, setOffset] = useState({ x: 0, y: 0 });
@@ -27,40 +26,49 @@ export const AudioCard = ({ currentProject, currentSection  }) => {
         const projectsSection = document.getElementById('audiocardContainer');
         if (projectsSection) {
             const rect = projectsSection.getBoundingClientRect();
-            setPosition({ x: rect.right }); 
+            setPosition({ x: rect.right , y: rect.top}); 
         }
     }, []);
 
+
     useEffect(() => {
-        setIsCurrentProject(currentProject === 'AudioCard');
-    }, [currentProject]);
+        const handleMouseMove = (e) => {
+            if (isDragging) {
+                setPosition({
+                    x: e.clientX - offset.x,
+                    y: e.clientY - offset.y,
+                });
+            }
+        };
+
+        const handleMouseUp = () => {
+            setIsDragging(false);
+            window.removeEventListener('mousemove', handleMouseMove);
+            window.removeEventListener('mouseup', handleMouseUp);
+        };
+
+        if (isDragging) {
+            window.addEventListener('mousemove', handleMouseMove);
+            window.addEventListener('mouseup', handleMouseUp);
+        }
+
+        return () => {
+            window.removeEventListener('mousemove', handleMouseMove);
+            window.removeEventListener('mouseup', handleMouseUp);
+        };
+    }, [isDragging, offset]);
 
     const handleMouseDown = (e) => {
         setIsDragging(true);
         setOffset({
             x: e.clientX - position.x,
-            y: e.clientY - position.y
+            y: e.clientY - position.y,
         });
-    };
-    
-    const handleMouseMove = (e) => {
-        if (!isDragging) return;
-        setPosition({
-            x: e.clientX - offset.x,
-            y: e.clientY - offset.y, 
-        });
-    };
-    
-
-    const handleMouseUp = () => {
-        setIsDragging(false);
     };
 
     return (
-        <div className={styles.audioCardContainer} style={{ zIndex: isCurrentProject ? '1000' : '0', position: 'relative', left: position.x, top: position.y }}
+        <div className={styles.audioCardContainer} style={{position: 'relative', left: position.x, top: position.y }}
             onMouseDown={handleMouseDown}
-            onMouseMove={handleMouseMove}
-            onMouseUp={handleMouseUp}
         >
         <div className='container'>
             <div className='row d-flex justify-content-center'>
@@ -70,17 +78,17 @@ export const AudioCard = ({ currentProject, currentSection  }) => {
                 An audio-based flashcard app that uses automated speech recognition to test its users.
             </div>
             <div className='row d-flex justify-content-center'>
-                <div className='col d-flex justify-content-center' style={{width: '100%', height: '100%', marginTop: '2vh', marginLeft: '2vw'}}>
+                <div className={`col ${styles.vidContainer}`}>
                     <video height='100%' width='100%' controls>
                         <source src="AudioCardDemo.mp4" type="video/mp4" />
                         Your browser does not support the video tag.
                     </video>
                 </div>
                 <div className={`col d-flex justify-content-center ${styles.vizContainer}`}>
-                <TechStack techs={techs} currentSection={currentSection}/> 
+                <TechStack techs={techs}/> 
             </div>
             </div>
-            <div className='row align-items-center' style={{marginTop: '5vh'}}>
+            <div className='row align-items-center' style={{marginTop: '4vh'}}>
                 <div className='col d-flex justify-content-end'>
                     <a className={styles.gitLogo} href="https://github.com/csci-499-sp24/AudioCard" target="_blank">
                         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24">

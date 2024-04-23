@@ -3,9 +3,6 @@ import styles from './projects.module.css';
 import { TechStack } from './TechStack';
 
 export const AudioCard = ({}) => {
-    const [isDragging, setIsDragging] = useState(false);
-    const [position, setPosition] = useState({ x: 0, y: 0 });
-    const [offset, setOffset] = useState({ x: 0, y: 0 });
     const techs = {
             JS: { label: 'JavaScript', value: 0.85 , stack: 'frontEnd', info: 'The majority of this project was coded in javascript'},
             React: { label: 'React', value: .9, stack: 'frontEnd', info: 'Used React in frontend to create a component-based architecture and dynamic UI' },
@@ -22,55 +19,9 @@ export const AudioCard = ({}) => {
     };
     
 
-    useEffect(() => {
-        const projectsSection = document.getElementById('audiocardContainer');
-        if (projectsSection) {
-            const rect = projectsSection.getBoundingClientRect();
-            setPosition({ x: rect.right , y: rect.top}); 
-        }
-    }, []);
-
-
-    useEffect(() => {
-        const handleMouseMove = (e) => {
-            if (isDragging) {
-                setPosition({
-                    x: e.clientX - offset.x,
-                    y: e.clientY - offset.y,
-                });
-            }
-        };
-
-        const handleMouseUp = () => {
-            setIsDragging(false);
-            window.removeEventListener('mousemove', handleMouseMove);
-            window.removeEventListener('mouseup', handleMouseUp);
-        };
-
-        if (isDragging) {
-            window.addEventListener('mousemove', handleMouseMove);
-            window.addEventListener('mouseup', handleMouseUp);
-        }
-
-        return () => {
-            window.removeEventListener('mousemove', handleMouseMove);
-            window.removeEventListener('mouseup', handleMouseUp);
-        };
-    }, [isDragging, offset]);
-
-    const handleMouseDown = (e) => {
-        e.stopPropagation(); 
-        setIsDragging(true);
-        setOffset({
-            x: e.clientX - position.x,
-            y: e.clientY - position.y,
-        });
-    };
 
     return (
-        <div className={styles.audioCardContainer} style={{position: 'absolute', left: position.x, top: position.y }}
-            onMouseDown={handleMouseDown}
-        >
+        <div className={styles.audioCardContainer}>
         <div className='container'>
             <div className='row d-flex justify-content-center'>
                 <h1 className='d-flex justify-content-center'>AudioCard</h1>

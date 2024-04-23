@@ -3,9 +3,6 @@ import styles from './projects.module.css';
 import { TechStack } from './TechStack';
 
 export const TreesAndRent = ({}) => {
-    const [isDragging, setIsDragging] = useState(false);
-    const [position, setPosition] = useState({ x: 0, y: 0 });
-    const [offset, setOffset] = useState({ x: 0, y: 0 });
     const techs = {
         py : {label: 'Python', value: 0.9, stack: 'frontEnd', info:'Used Python and Python libraries for data cleaning, data manipulation, data visualizations, calculations'},
         jnb : {label: 'Jupyter Notebook', value: 0.95, stack: 'tools', info:'Used Jupyter Notebook to present my process and findings'},
@@ -16,55 +13,9 @@ export const TreesAndRent = ({}) => {
         sns: {label: 'Seaborn', value: 0.5, stack: 'frontEnd', info: 'Used Seaborn for creating data visualizations'}, 
         mpl: {label: 'Matplotlib', value: 0.4, stack: 'frontEnd', info: 'Used Matplotlib for assistance in creating data visualizations'}
     }
-    useEffect(() => {
-        const projectsSection = document.getElementById('audiocardContainer');
-        if (projectsSection) {
-            const rect = projectsSection.getBoundingClientRect();
-            setPosition({ x: rect.right , y: rect.top}); 
-        }
-    }, []);
-
-
-    useEffect(() => {
-        const handleMouseMove = (e) => {
-            if (isDragging) {
-                setPosition({
-                    x: e.clientX - offset.x,
-                    y: e.clientY - offset.y,
-                });
-            }
-        };
-
-        const handleMouseUp = () => {
-            setIsDragging(false);
-            window.removeEventListener('mousemove', handleMouseMove);
-            window.removeEventListener('mouseup', handleMouseUp);
-        };
-
-        if (isDragging) {
-            window.addEventListener('mousemove', handleMouseMove);
-            window.addEventListener('mouseup', handleMouseUp);
-        }
-
-        return () => {
-            window.removeEventListener('mousemove', handleMouseMove);
-            window.removeEventListener('mouseup', handleMouseUp);
-        };
-    }, [isDragging, offset]);
-
-    const handleMouseDown = (e) => {
-        e.stopPropagation(); 
-        setIsDragging(true);
-        setOffset({
-            x: e.clientX - position.x,
-            y: e.clientY - position.y,
-        });
-    };
 
     return(
-        <div className={styles.treesContainer} style={{position: 'relative', left: position.x, top: position.y }}
-            onMouseDown={handleMouseDown}
-        >
+        <div className={styles.treesContainer}>
             <div className='container'>
                 <div className='row d-flex justify-content-center'>
                     <h1 className='d-flex justify-content-center'>NYC Trees and Rent</h1>

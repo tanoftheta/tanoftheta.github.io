@@ -46,7 +46,7 @@
     height: 50vh; 
 }
 
-.projectContainerAC, .projectContainerTR {
+.projectContainer{
     height: 73%; 
     width: 87%; 
     position: absolute;
@@ -56,15 +56,6 @@
     margin: 0; 
 }
 
-.projectContainerAC {
-    top: 10%;
-    left: 5%; 
-}
-
-.projectContainerTR{
-    top: 1%; 
-    left: 10%; 
-}
 
 .vidContainer{
     display: flex;

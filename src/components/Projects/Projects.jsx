@@ -81,10 +81,10 @@ export const Projects = ({}) => {
         <div className="container-fluid d-flex justify-content-center align-items-center"
         onMouseDown={handleMouseDown}
         style={{ position: 'relative', height: '100%', marginTop: '10%'}}>
-            <div className={styles.projectContainerAC} onClick={(event) => handleProjectClick('AudioCard', event)}  style={{ position: 'absolute', left: positionAC.x, top: positionAC.y, zIndex: currentProject === 'AudioCard' ? 5 : 1 }}>
+            <div className={styles.projectContainer} onClick={(event) => handleProjectClick('AudioCard', event)}  style={{ position: 'absolute', left: positionAC.x, top: positionAC.y, zIndex: currentProject === 'AudioCard' ? 5 : 1 }}>
                     <AudioCard />
                 </div>
-                <div className={styles.projectContainerTR} onClick={(event) => handleProjectClick('TreesAndRent', event)}  style={{position: 'absolute', left: positionTR.x, top: positionTR.y,  zIndex: currentProject === 'TreesAndRent' ? 5 : 1 }}>
+                <div className={styles.projectContainer} onClick={(event) => handleProjectClick('TreesAndRent', event)}  style={{position: 'absolute', left: positionTR.x, top: positionTR.y,  zIndex: currentProject === 'TreesAndRent' ? 5 : 1 }}>
                     <TreesAndRent/>
                 </div>
             </div>

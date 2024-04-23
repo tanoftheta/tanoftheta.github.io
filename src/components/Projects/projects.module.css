@@ -53,7 +53,8 @@
     width: 87%; 
     position: absolute; 
     margin: none; 
-    padding: none; 
+    padding: none;
+    pointer-events: auto;
 }
 
 .vidContainer{

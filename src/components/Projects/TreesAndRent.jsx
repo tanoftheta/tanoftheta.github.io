@@ -53,6 +53,7 @@ export const TreesAndRent = ({}) => {
     }, [isDragging, offset]);
 
     const handleMouseDown = (e) => {
+        e.stopPropagation(); 
         setIsDragging(true);
         setOffset({
             x: e.clientX - position.x,

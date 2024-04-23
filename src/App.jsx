@@ -79,7 +79,7 @@ function App() {
           <About currentSection={currentSection}/>
         </div>
         <div id = 'projects' className={styles.section}>
-          <Projects currentSection={currentSection}/> 
+          <Projects/> 
         </div>
         <div id = 'contact' className={styles.section}>
           <Contact/> 

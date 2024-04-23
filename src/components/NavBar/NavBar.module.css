@@ -20,6 +20,14 @@
 }
 
 
+.gitLogo{
+    position: absolute;
+    top: 1vh;
+    right: 1vw; 
+}
+.gitLogo:hover{
+    transform: scale(1.1); 
+}
 
 .color-scale {
     display: flex;

@@ -3,7 +3,7 @@ import styles from './projects.module.css';
 import {AudioCard} from './AudioCard.jsx'; 
 import { TreesAndRent } from "./TreesAndRent.jsx";
 
-export const Projects = ({currentSection}) => {
+export const Projects = ({}) => {
     const [currentProject, setCurrentProject] = useState('AudioCard');
     
     const handleProjectClick = (projectName, event) => {
@@ -21,12 +21,12 @@ export const Projects = ({currentSection}) => {
 
     return (
         <section className={styles.section}>
-            <div className="container-fluid d-flex justify-content-center align-items-center" style={{ position: 'relative', height: '100%' }}>
+            <div className="container-fluid d-flex justify-content-center align-items-center" style={{  position: 'relative', height: '100%' }}>
                 <div className={styles.projectContainer} onClick={(event) => handleProjectClick('AudioCard', event)} style={{top: '10vh', left: '5vw', zIndex: currentProject === 'AudioCard' ? 2 : 1 }}>
-                    <AudioCard  />
+                    <AudioCard />
                 </div>
                 <div className={styles.projectContainer} onClick={(event) => handleProjectClick('TreesAndRent', event)}  style={{ top: '1vh', left: '10vw',  zIndex: currentProject === 'TreesAndRent' ? 2 : 1 }}>
-                    <TreesAndRent />
+                    <TreesAndRent/>
                 </div>
             </div>
         </section>

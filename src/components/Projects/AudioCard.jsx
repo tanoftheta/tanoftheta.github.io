@@ -68,7 +68,7 @@ export const AudioCard = ({}) => {
     };
 
     return (
-        <div className={styles.audioCardContainer} style={{position: 'relative', left: position.x, top: position.y }}
+        <div className={styles.audioCardContainer} style={{position: 'absolute', left: position.x, top: position.y }}
             onMouseDown={handleMouseDown}
         >
         <div className='container'>

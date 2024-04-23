@@ -6,7 +6,6 @@
 
 .audioCardContainer {
     cursor: pointer; 
-    margin-top: 10%; 
     border: 2px solid black; 
     height: 100%; 
     width: 100%; 
@@ -20,7 +19,6 @@
 
 .treesContainer {
     cursor: pointer; 
-    margin-top: 10%; 
     border: 2px solid black; 
     height: 100%; 
     width: 100%; 
@@ -48,13 +46,24 @@
     height: 50vh; 
 }
 
-.projectContainer {
+.projectContainerAC, .projectContainerTR {
     height: 73%; 
     width: 87%; 
-    position: absolute; 
-    margin: none; 
+    position: absolute;
+    margin: 0; 
     padding: none;
     pointer-events: auto;
+    margin: 0; 
+}
+
+.projectContainerAC {
+    top: 10%;
+    left: 5%; 
+}
+
+.projectContainerTR{
+    top: 1%; 
+    left: 10%; 
 }
 
 .vidContainer{

@@ -19,7 +19,7 @@ export const Dots = ({}) => {
                 <h1 className='d-flex justify-content-center'>Dots</h1>
             </div>
             <div className='row d-flex justify-content-center'>
-                A Flutter mobile app for Android with a Unity game.
+                A Flutter mobile app for Android with a Unity game. The game is inspired by Agario, the online multiplayer web game, but transforms it into single player mobile experience.
             </div>
             <div className='row d-flex' style={{marginTop: '2vh'}}>
                 <div className={`col ${styles.vidContainer}`}>

@@ -2,13 +2,16 @@ import React , {useState, useEffect} from "react";
 import styles from './projects.module.css'; 
 import {AudioCard} from './AudioCard.jsx'; 
 import { TreesAndRent } from "./TreesAndRent.jsx";
+import { Dots } from "./Dots.jsx";
 
 export const Projects = ({}) => {
     const [currentProject, setCurrentProject] = useState('AudioCard');
     const [positionAC, setPositionAC] = useState({ x: 40, y: 110});
     const [positionTR, setPositionTR] = useState({ x: 150, y: 40});
+    const [positionD, setPositionD] = useState({x: 70, y: 0}); 
     const [offsetAC, setOffsetAC] = useState({ x: 0, y: 0 });
     const [offsetTR, setOffsetTR] = useState({ x: 0, y: 0 });
+    const [offsetD, setOffsetD] = useState({x: 0, y: 0}); 
     const [isDragging, setIsDragging] = useState(false);
 
     const handleProjectClick = (projectName, event) => {
@@ -31,10 +34,16 @@ export const Projects = ({}) => {
                     y: e.clientY - offsetAC.y,
                 });
             }
-            else {
+            else if (currentProject === 'TreesAndRent'){
                 setPositionTR({
                     x: e.clientX - offsetTR.x,
                     y: e.clientY - offsetTR.y,
+                })
+            }
+            else if (currentProject === 'Dots'){
+                setPositionD({
+                    x: e.clientX - offsetD.x,
+                    y: e.clientY - offsetD.y,
                 })
             }
         }
@@ -66,10 +75,16 @@ export const Projects = ({}) => {
             y: e.clientY - positionAC.y,
         });
         }
-        else{
+        else if (currentProject === 'TreesAndRent'){
             setOffsetTR({
                 x: e.clientX - positionTR.x, 
                 y: e.clientY - positionTR.y, 
+            })
+        }
+        else if (currentProject === 'Dots'){
+            setOffsetD({
+                x: e.clientX - positionD.x, 
+                y: e.clientY - positionD.y, 
             })
         }
     };
@@ -86,6 +101,9 @@ export const Projects = ({}) => {
                 </div>
                 <div className={styles.projectContainer} onClick={(event) => handleProjectClick('TreesAndRent', event)}  style={{position: 'absolute', left: positionTR.x, top: positionTR.y,  zIndex: currentProject === 'TreesAndRent' ? 5 : 1 }}>
                     <TreesAndRent/>
+                </div>
+                <div className={styles.projectContainer} onClick={(event) => handleProjectClick('Dots', event)}  style={{position: 'absolute', left: positionD.x, top: positionD.y,  zIndex: currentProject === 'Dots' ? 5 : 0 }}>
+                    <Dots/>
                 </div>
             </div>
         </section>

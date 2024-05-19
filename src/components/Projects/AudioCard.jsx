@@ -12,7 +12,7 @@ export const AudioCard = ({}) => {
             Express: { label: 'Express', value: 0.5, stack:'backEnd', info: 'Used for middleware and routing for API endpoints'},
             Google: { label: 'Google Cloud APIs', value: 0.55, stack: 'backEnd',  info: 'Used Google Cloud Text to Speech, Speech to Text, and Natural Language' },
             Sequelize: { label: 'Sequelize ORM', value: 0.3, stack: 'backEnd', info: 'Used to interact with our MySQL database' },
-            Github: { label: 'Github', value: 0.8, stack: 'tools', info: 'Used GitHub projects for backlog and sprint planning, code review on pull requests' },
+            Github: { label: 'Github', value: 0.8, stack: 'tools', info: 'Used GitHub projects for backlog and sprint planning, code review on pull requests, and version control' },
             AWS: { label: 'Amazon Web Services', value: 0.6, stack: 'tools', info: "Used to host our MySQL database, S3 bucket to store user profile pics"},
             Firebase: { label: 'Firebase', stack: 'tools' , value: 0.3, info: 'Used Firebase for user authentication' },
             Render: { label: 'Render', value: 0.2, stack: 'tools', info: 'Free server to deploy our live product' }

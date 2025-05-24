@@ -35,17 +35,17 @@ const AboutChart = () => {
             let fact = ''
             let image= '';
             if (xValue >= -1 && xValue <= -.95) {
-                fact = 'Origin (0,0): I am a born and raised New Yorker, first-generation American, and first-generation college student.'
+                fact = 'Origin (0,0): I am a born and raised New Yorker, first-generation American, and first-generation college graduate.'
             }
             if (xValue > -.95 && xValue <= -0.50099999999996) {
-                fact = 'I am an undergraduate student at Hunter College in my final year of a degree in Computer Science with a minor in Mathematics.'
+                fact = "I have a bachelor's degree in Computer Science with a minor in Mathematics from Hunter College, City University of New York."
                 image = '<br> <img src="hunterCollege.png" alt="hunter" style="max-width: 110px; max-height: 110px;" />';
             }
             if (xValue > -.50099999999 && xValue <= -.1){
-                fact = 'I dont know if you can tell, but I really enjoy working with data. I am particularly interested in machine learning and data science. I make it a goal to find the unsung hero in numbers and tell their story.'
+                fact = 'I dont know if you can tell, but I really enjoy working with data. I am a quantitative thinker with an eye for beautiful visualizations. I make it a goal to find the unsung hero in numbers and tell their story.'
             }
             if (xValue > -0.1 && xValue <= 0.3) {
-                fact = 'Both in my personal and professional life, I am deeply committed to contributing positively to combat social issues that matter the most to me. Among them are racial inequality, class struggles, and the climate crisis.'
+                fact = 'Both in my personal and professional life, I am deeply committed to contributing positively to mission-driven work that supports a multi-racial and equitable democracy. Oh, I would also hate for our planet to burn.'
             }
             if (xValue > 0.3 && xValue <= 0.6000000000000001) {
                 fact = 'In my spare time, I like to code retro 8-bit style mini games. I find pixel art really fun to create!'

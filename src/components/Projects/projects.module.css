@@ -17,6 +17,18 @@
     background-color: white;
 }
 
+.imessageContainer{
+    cursor: pointer; 
+    border: 2px solid black; 
+    height: 100%; 
+    width: 100%; 
+    background-image: 
+        linear-gradient(0deg, #E5E5EA 1px, transparent 1px),
+        linear-gradient(90deg, #E5E5EA 1px, transparent 1px);
+    background-size: 25px 25px;
+    background-position: -1px -1px;
+    background-color: #03A2E9;
+}
 .treesContainer {
     cursor: pointer; 
     border: 2px solid black; 

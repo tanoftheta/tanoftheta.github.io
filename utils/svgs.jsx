@@ -16,13 +16,16 @@ import flutter from './icons/flutter.png'
 import gitlab from './icons/gitlab.png'
 import postgres from './icons/postgres.png'
 import unity from './icons/unity.png'
+import openai from './icons/openai.png'
 
 export const getSvg = (tech) => {
     switch (tech) {
         case 'JavaScript':
             return javascript;
         case 'Python': 
-            return python; 
+            return python;
+        case 'OpenAI':
+            return openai;
         case 'React':
             return react; 
         case 'CSS': 

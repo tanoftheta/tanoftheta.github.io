@@ -9,7 +9,6 @@ export const TreesAndRent = ({}) => {
         pandas : {label: 'Pandas', value: 0.7, stack: 'frontEnd', info:'Used Pandas for data manipulation and transformation'}, 
         numpy: {label: 'NumPy', value: 0.3, stack: 'frontEnd', info: 'Used NumPy to further assist with data manipulation and calculations'}, 
         scipy: {label: 'SciPy', value: 0.3, stack: 'frontEnd', info: 'Used SciPy to make statistical calculations, such as correlation coefficient and p-value'}, 
-        py : {label: 'Python', value: 0.9, stack: 'frontEnd', info:'Used Python and Python libraries for data cleaning, data manipulation, data visualizations, calculations'}, 
         sns: {label: 'Seaborn', value: 0.5, stack: 'frontEnd', info: 'Used Seaborn for creating data visualizations'}, 
         mpl: {label: 'Matplotlib', value: 0.4, stack: 'frontEnd', info: 'Used Matplotlib for assistance in creating data visualizations'}
     }

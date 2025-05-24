@@ -22,9 +22,10 @@ const AboutChart = () => {
             .append("g")
             .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
-        const tooltip = d3.select('#chartContainer')
-        .append("div")
-        .attr("class", "tooltip"); 
+            const tooltip = d3.select(chartContainerRef.current)
+            .append("div")
+            .attr("class", "tooltip");
+          
 
         const dataPoints = [];
         const numPoints = 100;
@@ -83,43 +84,48 @@ const AboutChart = () => {
             .attr("width", width)
             .attr("height", height); 
         
-        listeningRect.on("mousemove", function(event){
-            const [xCoord] = d3.pointer(event, this)
-            const bisect = d3.bisector(d => d.x).left; 
-            const x0 = xScale.invert(xCoord);
-            const i = bisect(dataPoints, x0, 1);
-            const d0 = dataPoints[i-1]; 
-            const d1 = dataPoints[i]; 
-            const d = x0 - d0.x > d1.x - x0 ? d1: d0;
-            const xPos = xScale(d.x); 
-            const yPos = yScale(d.y); 
-            circle.attr("cx", xPos)
-            .attr("cy", yPos);
-
-            const tooltipWidth = tooltip.node().offsetWidth;
-            const tooltipHeight = tooltip.node().offsetHeight;
-        
-            let tooltipLeft = xPos; 
-            let tooltipTop = yPos; 
-        
-            if (tooltipLeft + tooltipWidth > window.innerWidth) {
-                tooltipLeft = window.innerWidth - tooltipWidth;
-            }
-            if (tooltipTop + tooltipHeight > window.innerHeight) {
-                tooltipTop = window.innerHeight - tooltipHeight;
-            }
-        
-            tooltip
-                .style("display", "block")
-                .style("left", `${tooltipLeft}px + 100vw`)
-                .style("top",  `${tooltipTop}px + 50vh`)
-                .style("width", '30%')
-                .html(`<strong> ${d.fact} </strong>`);
-        })
-
-        listeningRect.on("mouseleave", function() {
-            tooltip.style("display", "none");
-        })
+            listeningRect.on("mousemove", function(event) {
+                const [xCoord] = d3.pointer(event, this);
+                const bisect = d3.bisector(d => d.x).left;
+                const x0 = xScale.invert(xCoord);
+                const i = bisect(dataPoints, x0, 1);
+                const d0 = dataPoints[i - 1];
+                const d1 = dataPoints[i];
+                const d = x0 - d0.x > d1.x - x0 ? d1 : d0;
+                const xPos = xScale(d.x);
+                const yPos = yScale(d.y);
+                circle.attr("cx", xPos).attr("cy", yPos);
+            
+                const tooltipWidth = tooltip.node().offsetWidth;
+                const tooltipHeight = tooltip.node().offsetHeight;
+                const [mouseX, mouseY] = d3.pointer(event);
+            
+                // Start with basic offset
+                let tooltipLeft = mouseX + window.scrollX + 5;
+                let tooltipTop = mouseY + window.scrollY -5;
+            
+                // Clamp to window bounds
+                if (tooltipLeft + tooltipWidth > window.scrollX + window.innerWidth) {
+                    tooltipLeft = window.scrollX + window.innerWidth - tooltipWidth - 5;
+                }
+                if (tooltipTop + tooltipHeight > window.scrollY + window.innerHeight) {
+                    tooltipTop = window.scrollY + window.innerHeight - tooltipHeight - 5;
+                }
+            
+                tooltip
+                    .style("display", "block")
+                    .style("position", "absolute")
+                    .style("left", `${tooltipLeft}px`)
+                    .style("top", `${tooltipTop}px`)
+                    .style("width", "30%")
+                    .html(`<strong>${d.fact}</strong>`);
+            });
+            
+        d3.select(chartContainerRef.current)
+        .on("mouseleave", function () {
+          tooltip.style("display", "none");
+        });
+      
         const circle = svg.append("circle")
         .attr("cx", 0)  
         .attr("cy", height)

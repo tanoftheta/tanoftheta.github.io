@@ -9,6 +9,7 @@
 
 .grid-container {
     background-color: var(--mintgreen);
+    cursor: crosshair; 
     margin-top: 10%;  
     border: 2px solid black; 
     height: 80%; 

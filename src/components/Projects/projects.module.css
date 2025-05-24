@@ -5,7 +5,7 @@
 
 
 .audioCardContainer {
-    cursor: pointer; 
+    cursor: crosshair; 
     border: 2px solid black; 
     height: 100%; 
     width: 100%; 
@@ -18,7 +18,7 @@
 }
 
 .imessageContainer{
-    cursor: pointer; 
+    cursor: crosshair; 
     border: 2px solid black; 
     height: 100%; 
     width: 100%; 
@@ -30,7 +30,7 @@
     background-color: #03A2E9;
 }
 .treesContainer {
-    cursor: pointer; 
+    cursor: crosshair; 
     border: 2px solid black; 
     height: 100%; 
     width: 100%; 
@@ -43,7 +43,7 @@
 }
 
 .dotsContainer{
-    cursor: pointer; 
+    cursor: crosshair; 
     border: 2px solid black; 
     height: 100%; 
     width: 100%; 

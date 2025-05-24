@@ -20,7 +20,7 @@ export const About = ({ currentSection })=> {
             </div>
             <div className="button-container">
                 <a href="/resume.pdf" target="_blank" className={styles.resumeButton}>
-                    <i className="bi bi-eye-fill"></i> resume
+                    <i className="bi bi-file-earmark-person"></i> &nbsp;resume
                 </a>
             </div>
             </div>

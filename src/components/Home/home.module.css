@@ -1,6 +1,7 @@
 @import '../../vars.css';
 .grid-container {
     margin-top: 10%; 
+    cursor: crosshair; 
     border: 2px solid black; 
     height: 80%;
     width: 98%; 
